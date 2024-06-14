@@ -1,16 +1,36 @@
 import { Route, Routes } from "react-router-dom"
-import Login from "./pages/login/Login"
+import Home from "./pages/home"
+import Menu from "./pages/menu"
+import ContactUs from "./pages/contact-us"
+import Cart from "./pages/cart"
+import PlaceOrder from "./pages/placeOrder"
+import Login from "./pages/login"
+import Signup from "./pages/signup"
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 
 
 const App = () => {
  
   return (
-    <Routes>
-      {/* Public Routes */}
-      <Route path="/" element={<Login/>} exact></Route>
-
-      {/* Private Routes */}
-    </Routes>
+   <>
+    <div>
+      <Navbar />
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<Home/>} exact/>
+        <Route path="/menu" element={<Menu/>}/>
+        <Route path="/contact-us" element={<ContactUs/>}/>
+        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/placeOrder" element={<PlaceOrder/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/signup" element={<Signup/>}/>
+        <Route path="/placeOrder" element={<PlaceOrder/>}/>
+        {/* Private Routes */}
+      </Routes>
+   </div>
+   <Footer/>
+   </>
   )
 }
 
