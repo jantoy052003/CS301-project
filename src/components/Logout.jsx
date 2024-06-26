@@ -4,7 +4,7 @@ import UploadProfilePic from './UploadProfilePic'
 import DefaultProfile from "../assets/DefaultProfile.png"
 import { Link, NavLink } from 'react-router-dom'
 
-const Logout = ({showForm, showUploadImageForm, hideUploadImageForm, setShowForm, profileUrl, uploadProfileImage, logout}) => {
+const Logout = ({profileUrl, logout}) => {
   return (
     <section className="logout">
       {/* <UploadProfilePic hideUploadImageForm={hideUploadImageForm}  showForm={showForm} showUploadImageForm={showUploadImageForm} setShowForm={setShowForm} profileUrl={profileUrl} uploadProfileImage={uploadProfileImage} logout={logout}/> */}
