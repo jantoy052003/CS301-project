@@ -137,12 +137,12 @@ const index = () => {
         fetchDefaultProfile()
         fileInput.value = ''
         //navigate("/profile")
-        if (apiSuccess){
-            location.reload()
-        }
 
         } catch (error) {
         apiError(error.message)
+        }
+        if (apiSuccess){
+            location.reload()
         }
     }
     // --------------------
