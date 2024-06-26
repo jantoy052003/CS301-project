@@ -197,7 +197,7 @@ const Navbar = ({handleSubmitLogin}) => {
                 <li><NavLink tag={Link}  activeclassname="active" to="/contact-us">Contact Us</NavLink></li>
               </ul>
             </div>
-            <img src={assets.search_icon}/>
+            {/* <img src={assets.search_icon}/> */}
             <div className={token ? "relative" : "hidden"}> 
               <NavLink tag={Link} to="cart"><img src={assets.basket_icon} alt=""/></NavLink>
               <div className={getTotalCartAmount() === 0 ? "" : "animate-ping absolute w-4 h-4 bg-red-500 rounded-lg -top-1 -right-2"}></div>
@@ -212,7 +212,7 @@ const Navbar = ({handleSubmitLogin}) => {
             
           </div>
           <div className="flex justify-between items-center gap-5 lg:hidden">
-            <img src={assets.search_icon}/>
+            {/* <img src={assets.search_icon}/> */}
             <div className={token ? "relative" : "hidden"}> 
               <NavLink tag={Link} to="cart"><img src={assets.basket_icon} alt=""/></NavLink>
               <div className={getTotalCartAmount() === 0 ? "" : "animate-ping absolute w-4 h-4 bg-red-500 rounded-lg -top-1 -right-2"}></div>

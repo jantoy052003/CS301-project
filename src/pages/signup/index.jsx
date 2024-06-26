@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Navbar from "../../components/Navbar"
 import { Link, useNavigate } from "react-router-dom"
 import Name from "./Name"
+import LastName from "./LastName"
 import Email from "./Email"
 import Password from "./Password"
 import ConfirmPassword from "./ConfirmPassword"
@@ -11,23 +12,27 @@ const Signup = () => {
   
   const navigate = useNavigate()
   const [name, setName] = useState("")
+  const [last_name, setLastName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
 
   const [nameError, setNameError] = useState("")
+  const [lastNameError, setLastNameError] = useState("")
   const [existingEmailError, setExistingEmailError] = useState("")
   const [emailError, setEmailError] = useState("")
   const [passwordError, setPasswordError] = useState("")
   const [confirmPasswordError, setConfirmPasswordError] = useState("")
 
   const handleNameError = error => setNameError(error)
+  const handleLastNameError = error => setLastNameError(error)
   const handleEmailError = error => setEmailError(error)
   const handlePassError = error => setConfirmPasswordError(error)
   const handleConfirmPassError = error => setConfirmPasswordError(error) 
 
   useEffect(() => {
     setNameError("")
+    setLastNameError("")
     setEmailError("")
     setPasswordError("")
     setConfirmPasswordError("")
@@ -35,12 +40,13 @@ const Signup = () => {
 
   const register = async (e) => {
     e.preventDefault()
-    if (nameError || emailError || passwordError || confirmPasswordError) {
+    if (nameError || lastNameError || emailError || passwordError || confirmPasswordError) {
       return
     }
     try {
       const res = await api.post("/signup", {
         name: name,
+        last_name: last_name,
         email: email,
         password: password,
         password_confirmation: confirmPassword,
@@ -70,6 +76,7 @@ const Signup = () => {
               <p className="font-medium mb-6">Already have an account?<Link to="/login" className="text-orange-600">Log In</Link></p>
             </div>
             <Name value={name} onChange={(e) => setName(e.target.value)} onErrorChange={handleNameError} />
+            <LastName value={last_name} onChange={(e) => setLastName(e.target.value)} onErrorChange={handleLastNameError}/>
             <Email value={email} onChange={(e) => setEmail(e.target.value)} existingEmailError={existingEmailError}  onErrorChange={handleEmailError} />
             <div className="md:grid md:grid-cols-2 gap-4">
               <Password value={password} onChange={(e) => setPassword(e.target.value)} onErrorChange={handlePassError} />

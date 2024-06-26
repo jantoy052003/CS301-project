@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import UploadProfilePic from './UploadProfilePic'
 import DefaultProfile from "../assets/DefaultProfile.png"
+import { Link, NavLink } from 'react-router-dom'
 
 const Logout = ({showForm, showUploadImageForm, hideUploadImageForm, setShowForm, profileUrl, uploadProfileImage, logout}) => {
   return (
@@ -12,11 +13,13 @@ const Logout = ({showForm, showUploadImageForm, hideUploadImageForm, setShowForm
           <span className='mr-2 text-orange-600 text-xl group-hover:text-white duration-300 transition-all'><FontAwesomeIcon  icon={faArrowRightFromBracket} /></span>
           <span className='group-hover:text-white group-hover:duration-300 group-hover:transition-all'>Logout</span>
         </button>
-        <button type="button" className=' px-3 py-2 cursor-pointer duration-300 transition-all hover:bg-orange-600 rounded-md' onClick={showUploadImageForm}>
-          <img
-            className='w-7 h-7 lg:w-9 lg:h-9 rounded-full bg-white object-cover object-center'
-            src={profileUrl ? profileUrl : DefaultProfile}
-            alt="Profile Picture" />
+        <button type="button" className=' px-3 py-2 cursor-pointer duration-300 transition-all hover:bg-orange-600 rounded-md'>
+          <NavLink tag={Link} to="profile">
+            <img
+              className='w-7 h-7 lg:w-9 lg:h-9 rounded-full bg-white object-cover object-center'
+              src={profileUrl ? profileUrl : DefaultProfile}
+              alt="Profile Picture" />
+          </NavLink>
         </button>
       </div>
     </section>

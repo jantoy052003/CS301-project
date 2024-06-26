@@ -6,9 +6,9 @@ import Cart from "./pages/cart"
 import PlaceOrder from "./pages/placeOrder"
 import Login from "./pages/login"
 import Signup from "./pages/signup"
+import Profile from "./pages/profile"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
-
 
 const App = () => {
  
@@ -25,6 +25,7 @@ const App = () => {
         <Route path="/placeOrder" element={<PlaceOrder/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
+        <Route path="/profile" element={<Profile/>}/>
         <Route path="/placeOrder" element={<PlaceOrder/>}/>
         {/* Private Routes */}
       </Routes>

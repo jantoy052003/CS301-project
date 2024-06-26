@@ -7,8 +7,8 @@ const Name = ({value, onChange, onErrorChange}) => {
 
   const handleNameChange = (e) => {
     const newName = e.target.value
-    if (newName.length < 6) {
-        setNameError("Minimum of 6 characters")
+    if (newName.length <= 1) {
+        setNameError("Minimum of 1 character")
     } else if (/\d|[!@#$%^&*(),.?":{}|<>]/.test(newName)) {
         setNameError("Only text is allowed")
     } else {
