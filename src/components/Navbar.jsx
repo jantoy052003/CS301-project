@@ -126,33 +126,33 @@ const Navbar = ({handleSubmitLogin}) => {
   }, [])
 
   // Upload Pic
-  const uploadProfileImage = async (e) => {
-    e.preventDefault()
-    const fileInput = e.target.elements.image
+  // const uploadProfileImage = async (e) => {
+  //   e.preventDefault()
+  //   const fileInput = e.target.elements.image
 
-    if (!fileInput.value) {
-      apiError('Please select a file to upload')
-      return
-    }
+  //   if (!fileInput.value) {
+  //     apiError('Please select a file to upload')
+  //     return
+  //   }
 
-    const formData = new FormData()
-    formData.append('image', fileInput.files[0])
+  //   const formData = new FormData()
+  //   formData.append('image', fileInput.files[0])
 
-    try {
-      const res = await api.post(`/upload/${userId}`, formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'multipart/form-data'
-        }
-      })
-      apiSuccess(res.data.message)
-      fetchDefaultProfile()
-      fileInput.value = ''
+  //   try {
+  //     const res = await api.post(`/upload/${userId}`, formData, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //         'Content-Type': 'multipart/form-data'
+  //       }
+  //     })
+  //     apiSuccess(res.data.message)
+  //     fetchDefaultProfile()
+  //     fileInput.value = ''
 
-    } catch (error) {
-      apiError(error.message)
-    }
-  }
+  //   } catch (error) {
+  //     apiError(error.message)
+  //   }
+  // }
 
   //logout
   const logout = async () => {
@@ -205,7 +205,7 @@ const Navbar = ({handleSubmitLogin}) => {
             </div>
             {token ? (
               //Log-out
-              <Logout logout={logout} showForm={showForm} setShowForm={setShowForm} showUploadImageForm={showUploadImageForm} hideUploadImageForm={hideUploadImageForm} profileUrl={profileUrl}  uploadProfileImage={uploadProfileImage}/> 
+              <Logout onClick={handleClick} logout={logout} profileUrl={profileUrl} /> 
             ) : (
               <LogInButton handleSubmitLogin={handleSubmitLogin} />
             )}
@@ -230,7 +230,7 @@ const Navbar = ({handleSubmitLogin}) => {
                 <div className="p-0 mt-2">
                   {token ? (
                     //Log-out
-                    <Logout onClick={handleClick} logout={logout} showForm={showForm} setShowForm={setShowForm} showUploadImageForm={showUploadImageForm} hideUploadImageForm={hideUploadImageForm} profileUrl={profileUrl}  uploadProfileImage={uploadProfileImage}/> 
+                    <Logout onClick={handleClick} logout={logout} profileUrl={profileUrl} /> 
                   ) : (
                     <LogInButton onClick={handleClick} handleSubmitLogin={handleSubmitLogin} />
                   )}

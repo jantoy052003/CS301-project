@@ -136,8 +136,8 @@ const index = () => {
         apiSuccess(res.data.message)
         fetchDefaultProfile()
         fileInput.value = ''
-        navigate("/profile")
-        //location.reload();
+        //navigate("/profile")
+        location.reload();
 
         } catch (error) {
         apiError(error.message)
@@ -188,7 +188,7 @@ const index = () => {
                             id="first name"
                             required
                             autoComplete="off"
-                            onChange={editInfo()}
+                            //onChange={editInfo()}
                             defaultValue={name}
                         />
                         <label htmlFor="first name" className='transition-all duration-300 text-orange-500 absolute top-3 left-4 translate-y-[-70%] text-[14px] lg:text-[10px] peer-placeholder-shown:text-base peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-red peer-focus:text-orange-400 peer-focus:absolute peer-focus:top-3 peer-focus:left-4 peer-focus:translate-y-[-70%] peer-focus:text-[10px]'>
