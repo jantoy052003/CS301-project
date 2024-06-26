@@ -16,21 +16,19 @@ const App = () => {
    <>
     <div>
       <Navbar />
-      <HashRouter>
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={<Home/>} exact/>
-          <Route path="/menu" element={<Menu/>}/>
-          <Route path="/contact-us" element={<ContactUs/>}/>
-          <Route path="/cart" element={<Cart/>}/>
-          <Route path="/placeOrder" element={<PlaceOrder/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/signup" element={<Signup/>}/>
-          <Route path="/profile" element={<Profile/>}/>
-          <Route path="/placeOrder" element={<PlaceOrder/>}/>
-          {/* Private Routes */}
-        </Routes>
-      </HashRouter>
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<Home/>} exact/>
+        <Route path="/menu" element={<Menu/>}/>
+        <Route path="/contact-us" element={<ContactUs/>}/>
+        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/placeOrder" element={<PlaceOrder/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/signup" element={<Signup/>}/>
+        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/placeOrder" element={<PlaceOrder/>}/>
+        {/* Private Routes */}
+      </Routes>
    </div>
    <Footer/>
    </>
