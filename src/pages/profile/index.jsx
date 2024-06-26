@@ -141,9 +141,6 @@ const index = () => {
         } catch (error) {
         apiError(error.message)
         }
-        if (apiSuccess){
-            location.reload()
-        }
     }
     // --------------------
 
