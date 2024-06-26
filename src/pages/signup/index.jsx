@@ -54,8 +54,8 @@ const Signup = () => {
 
         localStorage.setItem("token", res.data.token)
         localStorage.setItem("id", res.data.user.id)
-        navigate("/menu")
-        window.location.reload();
+        navigate("/")
+        location.reload();
 
     } catch (error) {
       if (error.response && error.response.status === 422) {

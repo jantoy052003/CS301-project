@@ -135,7 +135,7 @@ const index = () => {
         apiSuccess(res.data.message)
         fetchDefaultProfile()
         fileInput.value = ''
-        window.location.reload();
+        location.reload();
 
         } catch (error) {
         apiError(error.message)
