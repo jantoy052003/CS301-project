@@ -1,5 +1,5 @@
 import DefaultProfile from "../../assets/DefaultProfile.png"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import UploadProfilePic from "../../components/UploadProfilePic"
 import { useFetchPersonalInfo } from "../../hooks/useFetchPersonalInfo"
 import { useEffect, useState } from "react"
@@ -10,6 +10,7 @@ import { useFetchProfilePic } from "../../hooks/useFetchProfilePic"
 import { useEditPersonalInfo } from "../../hooks/useEditPersonlInfo"
 
 const index = () => {
+    const navigate = useNavigate()
 
     // UPLOAD PROFILE PIC
     const [showForm, setShowForm, showUploadImageForm, hideUploadImageForm] = useToggleForm()
@@ -135,6 +136,7 @@ const index = () => {
         apiSuccess(res.data.message)
         fetchDefaultProfile()
         fileInput.value = ''
+        navigate("/profile")
         location.reload();
 
         } catch (error) {
