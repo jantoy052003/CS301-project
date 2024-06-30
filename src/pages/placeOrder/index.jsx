@@ -1,31 +1,146 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { StoreContext } from "../../context/StoreContext";
+import DeliveryInfo from "./DeliveryInfo";
+import { ToastContainer, toast } from "react-toastify"
+import api from "../../lib/api"
+import { useFetchPersonalInfo } from '../../hooks/useFetchPersonalInfo'
 
 const PlaceOrder = () => {
 
   const {getTotalCartAmount} = useContext(StoreContext);
+  const [userId, setUserId] = useState(localStorage.getItem("id"))
+  
+  const apiSuccess = (successMsg) => {
+    const customId = "custom-id-yes"
+    const existingToast = toast.isActive(customId)
 
+    if (successMsg === "Task has been moved to your archived." || successMsg === "It is recommended to set a start and end date for the task") {
+      if (existingToast) {
+        toast.update(existingToast, {
+          render: successMsg,
+          type: toast.TYPE.INFO,
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeButton: true,
+          closeOnClick: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }) 
+      } else {
+        toast.info(successMsg, {
+          toastId: customId,
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
+      }
+    } else {
+      if (existingToast) {
+        toast.update(existingToast, {
+          render: successMsg,
+          //type: toast.TYPE.SUCCESS,
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeButton: true,
+          closeOnClick: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
+      } else {
+        toast.success(successMsg, {
+          toastId: customId,
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
+      }
+    }
+  }
+
+  // Error Handling
+  const apiError = (errorMsg) => {
+      const customId = "custom-id-yes"
+      const existingToast = toast.isActive(customId)
+
+      if (existingToast) {
+      toast.update(existingToast, {
+          render: errorMsg,
+          //type: toast.TYPE.ERROR,
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeButton: true,
+          closeOnClick: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+      })
+      } else {
+      toast.error(errorMsg, {
+          toastId: customId,
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+      })
+      }
+  }
+
+  //Get Personal Information
+  const [setToken, token, setName, setLastName, setEmail, setStreet, setCity, setState, setCountry, setZip, setPhone, name, last_name, email, street, city, state, country, zip, phone, fetchInfo] = useFetchPersonalInfo(apiError)
+
+  useEffect(() => {
+      fetchInfo()
+  }, [])
+
+  //Edit Personal Information???
+
+  const handleSubmitProfile = async (e) => {
+    e.preventDefault()
+    try {
+        const requestData = {
+            name: name,
+            last_name: last_name,
+            email: email,
+
+            street: street,
+            city: city,
+            state: state,
+            country: country,
+            zip: zip,
+            phone: phone
+        }
+        const requestConfig = {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        }
+        const res = await api.put(`/profile/${userId}`, requestData, requestConfig)
+        apiSuccess(res.data.message)
+
+    } catch (error) {
+        apiError(error.message)
+    }
+  }
 
   return (
-    <form className="flex align-start justify-between gap-20 mt-16 mb-10 mx-10">
-      <div className="w-full max-w-xl">
-        <p className="text-3xl font-semibold mb-10">Delivery Information</p>
-        <div className="flex gap-2">
-          <input className="mb-2 w-full p-2.5 border-2  border-solid border-gray-400 outline-1 outline-red-400 rounded-md " type="text" placeholder="First Name" />
-          <input className="mb-2 w-full p-2.5 border-2  border-solid border-gray-400 outline-1 outline-red-400 rounded-md " type="text" placeholder="Last Name" />
-        </div>
-        <input className="mb-2 w-full p-2.5 border-2  border-solid border-gray-400 outline-1 outline-red-400 rounded-md " type="email" placeholder="Email address"/>
-        <input className="mb-2 w-full p-2.5 border-2  border-solid border-gray-400 outline-1 outline-red-400 rounded-md " type="text" placeholder="Street"/>
-        <div className="flex gap-2">
-          <input className="mb-2 w-full p-2.5 border-2  border-solid border-gray-400 outline-1 outline-red-400 rounded-md " type="text" placeholder="City" />
-          <input className="mb-2 w-full p-2.5 border-2  border-solid border-gray-400 outline-1 outline-red-400 rounded-md " type="text" placeholder="State" />
-        </div>
-        <div className="flex gap-2">
-          <input className="mb-2 w-full p-2.5 border-2  border-solid border-gray-400 outline-1 outline-red-400 rounded-md " type="text" placeholder="Zip code" />
-          <input className="mb-2 w-full p-2.5 border-2  border-solid border-gray-400 outline-1 outline-red-400 rounded-md " type="text" placeholder="Country" />
-        </div>
-        <input className="mb-2 w-full p-2.5 border-2  border-solid border-gray-400 outline-1 outline-red-400 rounded-md " type="text" placeholder="Phone" />
-      </div>
+    <div className="flex align-start justify-between gap-20 mt-16 mb-10 mx-10">
+      <DeliveryInfo name={name} last_name={last_name} email={email} street={street} city={city} state={state} country={country} zip={zip} phone={phone} setName={setName} setLastName={setLastName} setEmail={setEmail} setStreet={setStreet} setCity={setCity} setState={setState} setCountry={setCountry} setZip={setZip} setPhone={setPhone} handleSubmitProfile={handleSubmitProfile}/>
       <div className="w-full max-w-xl">
         <div className="flex flex-1 flex-col gap-4">
           <h2 className="font-black">Cart Total</h2>
@@ -45,10 +160,10 @@ const PlaceOrder = () => {
               <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
             </div>    
           </div>
-          <button className="bg-tomato border-0 rounded-md max-w-xs mt-14 lg:p-3">PROCEED TO PAYMENT</button>
+          <button className="bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md max-w-xs mt-14 lg:p-3">PROCEED TO PAYMENT</button>
         </div>
       </div>
-    </form>
+    </div>
   )
 }
 

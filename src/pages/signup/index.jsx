@@ -17,6 +17,14 @@ const Signup = () => {
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
 
+  //Address
+  const [street, setStreet] = useState("")
+  const [city, setCity] = useState("")
+  const [state, setState] = useState("")
+  const [country, setCountryt] = useState("")
+  const [zip, setZip] = useState("")
+  const [phone, setPhone] = useState("")
+
   const [nameError, setNameError] = useState("")
   const [lastNameError, setLastNameError] = useState("")
   const [existingEmailError, setExistingEmailError] = useState("")
@@ -50,10 +58,19 @@ const Signup = () => {
         email: email,
         password: password,
         password_confirmation: confirmPassword,
+
+        //Address
+        street: street,
+        city: city,
+        state: state,
+        country:country,
+        zip: zip,
+        phone: phone,
       })
 
         localStorage.setItem("token", res.data.token)
         localStorage.setItem("id", res.data.user.id)
+        localStorage.setItem("id", res.data.address.id)
         navigate("/")
         location.reload();
 
@@ -68,12 +85,12 @@ const Signup = () => {
 
   return (
     <>
-      <main className='background-bg-image flex justify-center items-center h-screen'>
+      <main className='background-bg-image flex justify-center items-center h-screen h-full mb-10 mt-2 lg:mx-12  rounded-xl'>
         <section className="login-form container mx-auto h-screen flex justify-center items-center px-4 md:justify-start">
           <form onSubmit={register} action="" className="text-black">
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl md:mb-8 font-bold mb-4">Create New Account</h1>
-              <p className="font-medium mb-6">Already have an account?<Link to="/login" className="text-orange-600">Log In</Link></p>
+              <h1 className="text-white text-4xl md:text-5xl lg:text-6xl md:mb-8 font-bold mb-4">Create New Account</h1>
+              <p className="text-white font-medium mb-6">Already have an account?<Link to="/login" className="text-orange-600"> Log In</Link></p>
             </div>
             <Name value={name} onChange={(e) => setName(e.target.value)} onErrorChange={handleNameError} />
             <LastName value={last_name} onChange={(e) => setLastName(e.target.value)} onErrorChange={handleLastNameError}/>

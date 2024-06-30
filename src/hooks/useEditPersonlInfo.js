@@ -5,6 +5,7 @@ export const useEditPersonalInfo = (apiError) => {
 
     const [token, setToken] = useState(localStorage.getItem("token"))
     const [name, setName] = useState([])
+    
 
     const editInfo = async () => {
         try {

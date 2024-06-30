@@ -41,13 +41,13 @@ const Login = () => {
   
   return (
     <>
-      <main className='background-bg-image flex justify-center items-center h-screen'>
+      <main className='background-bg-image flex justify-center items-center h-screen h-full mb-10 mt-2 lg:mx-12  rounded-xl'>
         <section className='border-4 rounded-md p-4'>
           <form onSubmit={handleSubmitLogin} action="" className='py-3 relative'>
           {error &&  <p className="font-medium absolute top-[-4.5rem] left-[-1.25rem] bg-red-600 px-4 py-2 rounded-md">{error}</p>}
-            <div className='mb-6'>
+            <div className='text-white mb-6'>
               <h1>Login to order</h1>
-              <p>Don`t have an account yet? <Link to="/signup" className="text-orange-600">Create Account</Link></p>
+              <p>Don`t have an account yet? <Link to="/signup" className="text-orange-600"> Create Account</Link></p>
             </div>
             <div className='my-4 relative'>
               <input
@@ -88,7 +88,7 @@ const Login = () => {
             <input
               className="w-full px-4 py-4 lg:py-5 rounded-lg bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600"
               type="submit"
-              value="Login"
+              value="Log-in"
             />
           </form>
         </section>

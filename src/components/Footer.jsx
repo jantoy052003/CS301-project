@@ -5,8 +5,8 @@ const Footer = () => {
     <>
       <div className='text-gray-200 bg-gray-700 flex flex-col lg:flex lg:justify-between lg:items-center gap-2 px-10 pt-5'>
         <div className='flex flex-col items-center lg:flex lg:justify-between lg:items center'>
-          <div>
-            <img src={assets.logo} alt="" />
+          <div className='w-16'>
+            <img src={assets.tabLogo} alt="" />
           </div>
           <div className='flex gap-48 lg:gap-80'>
               <div className='pt-3'>

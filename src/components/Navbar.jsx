@@ -125,35 +125,6 @@ const Navbar = ({handleSubmitLogin}) => {
     fetchDefaultProfile()
   }, [])
 
-  // Upload Pic
-  // const uploadProfileImage = async (e) => {
-  //   e.preventDefault()
-  //   const fileInput = e.target.elements.image
-
-  //   if (!fileInput.value) {
-  //     apiError('Please select a file to upload')
-  //     return
-  //   }
-
-  //   const formData = new FormData()
-  //   formData.append('image', fileInput.files[0])
-
-  //   try {
-  //     const res = await api.post(`/upload/${userId}`, formData, {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //         'Content-Type': 'multipart/form-data'
-  //       }
-  //     })
-  //     apiSuccess(res.data.message)
-  //     fetchDefaultProfile()
-  //     fileInput.value = ''
-
-  //   } catch (error) {
-  //     apiError(error.message)
-  //   }
-  // }
-
   //logout
   const logout = async () => {
     try {
@@ -188,13 +159,14 @@ const Navbar = ({handleSubmitLogin}) => {
       />
       <nav className='top-0 rounded-md z-40 mx-5 mt-2 lg:mx-10'>
         <div className='z-10 flex justify-between items-center'>
-          <img src={assets.logo} alt="" className="w-36 mx-2"/>
+          <img src={assets.logo2} alt="" className="w-16 mx-2"/>
           <div className="hidden lg:flex jusify-between items-center gap-8">
             <div className="mr-64">
               <ul className="flex gap-16">
                 <li><NavLink tag={Link}  activeclassname="active" to="/">Home</NavLink></li>
                 <li><NavLink tag={Link}  activeclassname="active" to="/menu">Menu</NavLink></li>
-                <li><NavLink tag={Link}  activeclassname="active" to="/contact-us">Contact Us</NavLink></li>
+                <li><NavLink tag={Link}  activeclassname="active" to="/about">About Us</NavLink></li>
+                <li><NavLink tag={Link}  activeclassname="active" to="/reviews">Reviews</NavLink></li>
               </ul>
             </div>
             {/* <img src={assets.search_icon}/> */}
@@ -203,12 +175,14 @@ const Navbar = ({handleSubmitLogin}) => {
               <div className={getTotalCartAmount() === 0 ? "" : "animate-ping absolute w-4 h-4 bg-red-500 rounded-lg -top-1 -right-2"}></div>
               <div className={getTotalCartAmount() === 0 ? "" : "absolute w-4 h-4 bg-red-500 rounded-lg -top-1 -right-2"}></div>
             </div>
-            {token ? (
-              //Log-out
-              <Logout onClick={handleClick} logout={logout} profileUrl={profileUrl} /> 
-            ) : (
-              <LogInButton handleSubmitLogin={handleSubmitLogin} />
-            )}
+            <div className="mr-2">
+              {token ? (
+                //Log-out
+                <Logout onClick={handleClick} logout={logout} profileUrl={profileUrl} /> 
+              ) : (
+                <LogInButton onClick={handleClick} handleSubmitLogin={handleSubmitLogin} />
+              )}
+            </div>
             
           </div>
           <div className="flex justify-between items-center gap-5 lg:hidden">
@@ -223,16 +197,17 @@ const Navbar = ({handleSubmitLogin}) => {
             </div>
           </div>
           <div className={!isOpen ? 'hidden' : 'animate-[slideRight_1000ms] duration-75 top-0 border-solid rounded-r-xl border-2 text-black fixed z-50 px-4 h-screen bg-gray-600 w-72 left-0'}>
-            <ul className=" relative py-4 my-12">
-                <li><NavLink onClick={handleClick} tag={Link}  activeclassname="active" to="/">Home</NavLink></li>
-                <li><NavLink onClick={handleClick} tag={Link}  activeclassname="active" to="/menu">Menu</NavLink></li>
-                <li><NavLink onClick={handleClick} tag={Link}  activeclassname="active" to="/contact-us">Contact Us</NavLink></li>
+            <ul onClick={handleClick} className=" relative py-4 my-12">
+                <li><NavLink tag={Link}  activeclassname="active" to="/">Home</NavLink></li>
+                <li><NavLink tag={Link}  activeclassname="active" to="/menu">Menu</NavLink></li>
+                <li><NavLink tag={Link}  activeclassname="active" to="/about">About Us</NavLink></li>
+                <li><NavLink tag={Link}  activeclassname="active" to="/reviews">Reviews</NavLink></li>
                 <div className="p-0 mt-2">
                   {token ? (
                     //Log-out
-                    <Logout onClick={handleClick} logout={logout} profileUrl={profileUrl} /> 
+                    <Logout logout={logout} profileUrl={profileUrl} /> 
                   ) : (
-                    <LogInButton onClick={handleClick} handleSubmitLogin={handleSubmitLogin} />
+                    <LogInButton handleSubmitLogin={handleSubmitLogin} />
                   )}
                 </div>
             </ul>

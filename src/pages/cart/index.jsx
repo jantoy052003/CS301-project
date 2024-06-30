@@ -58,7 +58,7 @@ const Cart = () => {
                 <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
               </div>    
             </div>
-            <button className="bg-tomato border-0 rounded-md max-w-xs lg:p-3"><NavLink tag={Link}  activeclassname="active" to="/placeOrder">PROCEED TO CHECKOUT</NavLink></button>
+            <button className="bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md max-w-xs lg:p-3"><NavLink tag={Link}  activeclassname="active" to="/placeOrder">PROCEED TO CHECKOUT</NavLink></button>
           </div>
           <div className="flex-1 mr-2">
             <div>

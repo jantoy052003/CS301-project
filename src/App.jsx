@@ -9,6 +9,8 @@ import Signup from "./pages/signup"
 import Profile from "./pages/profile"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
+import About from "./components/About"
+import Reviews from "./components/Reviews"
 
 const App = () => {
  
@@ -19,6 +21,8 @@ const App = () => {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<Home/>} exact/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/reviews" element={<Reviews/>}/>
         <Route path="/menu" element={<Menu/>}/>
         <Route path="/contact-us" element={<ContactUs/>}/>
         <Route path="/cart" element={<Cart/>}/>
