@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
         </div>
         <hr />
-        <p className='lg:mx-24 w-full lg:w-fit'>Copyright 2024 © Test.com - All Rights Reserve.</p>
+        <p className='flex justify-center lg:mx-24 w-full lg:w-fit'>Copyright 2024 © Test.com - All Rights Reserve.</p>
       </div>
     </>
   )

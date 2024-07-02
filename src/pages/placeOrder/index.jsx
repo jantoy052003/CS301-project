@@ -160,7 +160,7 @@ const PlaceOrder = () => {
               <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
             </div>    
           </div>
-          <button className="ml-[13%] lg:ml-[25%] bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md max-w-xs mt-14 lg:p-3">PROCEED TO PAYMENT</button>
+          <button className="bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md max-w-xs mt-14 lg:p-3">PROCEED TO PAYMENT</button>
         </div>
       </div>
     </div>

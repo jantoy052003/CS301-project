@@ -83,7 +83,7 @@ const DeliveryInfo = ({name, last_name, email,street, city, state, country, zip,
             value={phone} 
             onChange={e => setPhone(e.target.value)}
         />
-        <button className=" p-3 w-full ml-[13%] lg:ml-0 items-center bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md max-w-xs lg:p-3" type='submit'>Save Changes</button>
+        <button className=" p-3 w-full  lg:ml-0 items-center bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md max-w-xs lg:p-3" type='submit'>Save Changes</button>
     </form>
   )
 }
