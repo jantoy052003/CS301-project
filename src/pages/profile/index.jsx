@@ -187,7 +187,7 @@ const index = () => {
     }
     
     return (
-    <div className="background-bg-image flex flex-col items-center justify-center gap-12 py-12 h-full mb-10 mt-2 lg:mx-12  rounded-xl">
+    <div className="mx-2 background-bg-image flex flex-col items-center justify-center gap-12 py-12 h-full mb-10 mt-2 lg:mx-12  rounded-xl">
         <UploadProfilePic hideUploadImageForm={hideUploadImageForm}  showForm= {showForm} showUploadImageForm={showUploadImageForm} setShowForm={setShowForm} profileUrl={profileUrl} uploadProfileImage={uploadProfileImage}/>
         <div className="text-white flex flex-col items-center justify-center gap-8">
             <h1>MY PROFILE</h1>

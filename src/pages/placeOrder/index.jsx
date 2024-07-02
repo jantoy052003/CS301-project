@@ -139,11 +139,11 @@ const PlaceOrder = () => {
   }
 
   return (
-    <div className="flex align-start justify-between gap-20 mt-16 mb-10 mx-10">
+    <div className=" flex flex-col gap-9 lg:flex lg:flex-row lg:align-start lg:justify-between lg:gap-20 mt-16 mb-10 mx-10">
       <DeliveryInfo name={name} last_name={last_name} email={email} street={street} city={city} state={state} country={country} zip={zip} phone={phone} setName={setName} setLastName={setLastName} setEmail={setEmail} setStreet={setStreet} setCity={setCity} setState={setState} setCountry={setCountry} setZip={setZip} setPhone={setPhone} handleSubmitProfile={handleSubmitProfile}/>
       <div className="w-full max-w-xl">
         <div className="flex flex-1 flex-col gap-4">
-          <h2 className="font-black">Cart Total</h2>
+          <h2 className="ml-[40%] lg:ml-0 text-2xl font-black">Cart Total</h2>
           <div>
             <div className="flex justify-between text-grey-700">
               <p>Subtotal</p>
@@ -160,7 +160,7 @@ const PlaceOrder = () => {
               <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
             </div>    
           </div>
-          <button className="bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md max-w-xs mt-14 lg:p-3">PROCEED TO PAYMENT</button>
+          <button className="ml-[13%] lg:ml-[25%] bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md max-w-xs mt-14 lg:p-3">PROCEED TO PAYMENT</button>
         </div>
       </div>
     </div>

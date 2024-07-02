@@ -85,7 +85,7 @@ const Signup = () => {
 
   return (
     <>
-      <main className='background-bg-image flex justify-center items-center h-screen h-full mb-10 mt-2 lg:mx-12  rounded-xl'>
+      <main className='mx-2 background-bg-image flex justify-center items-center h-screen h-full mb-10 mt-2 lg:mx-12  rounded-xl'>
         <section className="login-form container mx-auto h-screen flex justify-center items-center px-4 md:justify-start">
           <form onSubmit={register} action="" className="text-black">
             <div>

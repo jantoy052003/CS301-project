@@ -41,7 +41,7 @@ const Login = () => {
   
   return (
     <>
-      <main className='background-bg-image flex justify-center items-center h-screen h-full mb-10 mt-2 lg:mx-12  rounded-xl'>
+      <main className='mx-2 background-bg-image flex justify-center items-center h-screen h-full mb-10 mt-2 lg:mx-12  rounded-xl'>
         <section className='border-4 rounded-md p-4'>
           <form onSubmit={handleSubmitLogin} action="" className='py-3 relative'>
           {error &&  <p className="font-medium absolute top-[-4.5rem] left-[-1.25rem] bg-red-600 px-4 py-2 rounded-md">{error}</p>}
