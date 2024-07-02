@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom"
 const Hero = () => {
   return (
     <>
-      <div className='hero-bg-image h-96 mb-10 mx-2 lg:mx-8 mt-10 rounded-xl'>
+      <div className='hero-bg-image h-96 mb-20 mx-2 lg:mx-8 mt-10 rounded-xl'>
         <div className="absolute flex flex-col items-start gap-4 max-w-lg bottom-16 left-4 lg:bottom-10 lg:left-20 animate-[appear_2500ms] duration-75">
           <h2 className="text-4xl lg:font-medium lg:text-6xl text-white">Order your favorite food here</h2>
           <p className="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque odit error veniam illo quo voluptates voluptate, perspiciatis voluptatibus temporibus dolor eius ab ea officiis ut eaque vitae labore corrupti aliquid earum neque repellat! Quaerat enim ducimus modi cumque magni! Pariatur.</p>

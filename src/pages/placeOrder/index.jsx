@@ -143,7 +143,7 @@ const PlaceOrder = () => {
       <DeliveryInfo name={name} last_name={last_name} email={email} street={street} city={city} state={state} country={country} zip={zip} phone={phone} setName={setName} setLastName={setLastName} setEmail={setEmail} setStreet={setStreet} setCity={setCity} setState={setState} setCountry={setCountry} setZip={setZip} setPhone={setPhone} handleSubmitProfile={handleSubmitProfile}/>
       <div className="w-full max-w-xl">
         <div className="flex flex-1 flex-col gap-4">
-          <h2 className="ml-[40%] lg:ml-0 text-2xl font-black">Cart Total</h2>
+          <h2 className="flex justify-center lg:ml-0 text-2xl font-black">Cart Total</h2>
           <div>
             <div className="flex justify-between text-grey-700">
               <p>Subtotal</p>
@@ -160,7 +160,7 @@ const PlaceOrder = () => {
               <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
             </div>    
           </div>
-          <button className="bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md max-w-xs mt-14 lg:p-3">PROCEED TO PAYMENT</button>
+          <button className="flex justify-center bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md max-w-xs mt-6 lg:p-3">PROCEED TO PAYMENT</button>
         </div>
       </div>
     </div>

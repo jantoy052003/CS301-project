@@ -8,7 +8,7 @@ const Cart = () => {
 
   return (
     <>
-      <div className="mt-24 mb-10">
+      <div className="mt-24 mb-20">
         <div className="">
           <div className="grid grid-cols-16 items-center text-gray-700 text-xs mx-10">
             <p>Items</p>

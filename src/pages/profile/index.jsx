@@ -192,7 +192,7 @@ const index = () => {
         <div className="text-white flex flex-col items-center justify-center gap-8">
             <h1>MY PROFILE</h1>
             <img
-                className='w-7 h-7 lg:w-32 lg:h-32 rounded-full bg-white object-cover object-center'
+                className='w-24 h-24 lg:w-32 lg:h-32 rounded-full bg-white object-cover object-center'
                 src={profileUrl ? profileUrl : DefaultProfile}
                 alt="Profile Picture" />
             <button onClick={showUploadImageForm} className="bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md max-w-xs lg:p-3">Edit Profile Photo</button>

@@ -196,13 +196,13 @@ const Navbar = ({handleSubmitLogin}) => {
               <Hamburger rounded distance="sm" size={30} duration={.9} toggled={isOpen} toggle={setOpen}/>
             </div>
           </div>
-          <div className={!isOpen ? 'animate-[slideLeft_1000ms] duration-75 top-0 border-solid rounded-r-xl border-2 text-black fixed z-50 px-4 h-screen bg-gray-600 w-72 left-[-100%]' : 'animate-[slideRight_1000ms] duration-75 top-0 border-solid rounded-r-xl border-2 text-black fixed z-50 px-4 h-screen bg-gray-600 w-72 left-0'}>
-            <ul onClick={handleClick} className=" relative py-4 my-12">
-                <li><NavLink tag={Link}  activeclassname="active" to="/">Home</NavLink></li>
-                <li><NavLink tag={Link}  activeclassname="active" to="/menu">Menu</NavLink></li>
-                <li><NavLink tag={Link}  activeclassname="active" to="/about">About Us</NavLink></li>
-                <li><NavLink tag={Link}  activeclassname="active" to="/reviews">Reviews</NavLink></li>
-                <div className="p-0 mt-2">
+          <div className={!isOpen ? 'animate-[slideLeft_1000ms] duration-75 top-0 border-solid rounded-r-xl border-2 text-black fixed z-50 px-4 h-screen bg-tomato w-72 left-[-100%]' : 'animate-[slideRight_1000ms] duration-75 top-0 border-solid rounded-r-xl border-2 text-black fixed z-50 px-4 h-screen backdrop-blur-md bg-white/30 w-56 left-0 flex justify-center items-center'}>
+            <ul onClick={handleClick} className="flex flex-col gap-10 items-center">
+                <li><NavLink to="/">Home</NavLink></li>
+                <li><NavLink to="/menu">Menu</NavLink></li>
+                <li><NavLink to="/about">About Us</NavLink></li>
+                <li><NavLink to="/reviews">Reviews</NavLink></li>
+                <div className="p-0 mt-8 lg:mt-2">
                   {token ? (
                     //Log-out
                     <Logout logout={logout} profileUrl={profileUrl} /> 

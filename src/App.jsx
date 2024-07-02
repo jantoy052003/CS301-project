@@ -33,8 +33,9 @@ const App = () => {
         <Route path="/placeOrder" element={<PlaceOrder/>}/>
         {/* Private Routes */}
       </Routes>
+      <Footer/>
    </div>
-   <Footer/>
+   
    </>
   )
 }

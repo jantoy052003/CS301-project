@@ -4,7 +4,7 @@ import { NavLink, Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <>
-      <div className='mb-0 text-gray-200 bg-gray-700 flex flex-col lg:flex lg:justify-between lg:items-center gap-2 px-10 pt-5'>
+      <div className='mb-0 pb-2 text-gray-200 bg-gray-700 flex flex-col lg:flex lg:justify-between lg:items-center gap-2 px-10 pt-5'>
         <div className='flex flex-col items-center lg:flex lg:justify-between lg:items center'>
           <div className='w-16'>
             <img src={assets.tabLogo} alt="" />

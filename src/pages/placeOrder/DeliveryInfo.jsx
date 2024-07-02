@@ -4,7 +4,7 @@ const DeliveryInfo = ({name, last_name, email,street, city, state, country, zip,
 
   return (
     <form onSubmit={handleSubmitProfile} className="w-full max-w-xl">
-        <p className="ml-[21%] lg:ml-0 text-3xl font-semibold mb-6">Delivery Information</p>
+        <p className="flex justify-center lg:ml-0 text-3xl font-semibold mb-6">Delivery Information</p>
         <div className="flex gap-2">
             <input className="mb-2 w-full p-2.5 border-2  border-solid border-gray-400 outline-1 outline-red-400 rounded-md"              
                 type="text" 

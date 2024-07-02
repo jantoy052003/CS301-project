@@ -2,7 +2,7 @@ import React from 'react'
 
 const Address = ({street, city, state, country, zip, phone, setStreet, setCity, setState, setCountry, setZip, setPhone, handleSubmitProfile}) => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="mx-4 flex flex-col items-center justify-center">
         <h1 className='text-white'>DELIVERY ADDRESS</h1>
         <form onSubmit={handleSubmitProfile} className="flex flex-col gap-5">
             <div className="flex gap-2 relative">
