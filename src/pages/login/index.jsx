@@ -80,7 +80,7 @@ const Login = () => {
                 Password
               </label>
               <FontAwesomeIcon
-                className="absolute right-3 top-1/2 translate-y-[-50%] cursor-pointer p-3"
+                className="absolute right-3 top-1/2 translate-y-[-50%] cursor-pointer p-[1.5]"
                 onClick={() => setPassType(passType === "password" ? "text" : "password")}
                 icon={passType === "password" ? faEye : faEyeSlash}
               />

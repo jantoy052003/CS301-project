@@ -195,7 +195,7 @@ const index = () => {
                 className='w-24 h-24 lg:w-32 lg:h-32 rounded-full bg-white object-cover object-center'
                 src={profileUrl ? profileUrl : DefaultProfile}
                 alt="Profile Picture" />
-            <button onClick={showUploadImageForm} className="bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md max-w-xs lg:p-3">Edit Profile Photo</button>
+            <button onClick={showUploadImageForm} className="bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md max-w-xs p-2 lg:p-3">Edit Profile Photo</button>
         </div>
         
         <div className="flex gap-12 ">

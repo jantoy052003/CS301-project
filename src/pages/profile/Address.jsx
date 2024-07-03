@@ -100,7 +100,7 @@ const Address = ({street, city, state, country, zip, phone, setStreet, setCity, 
                     Phone
                 </label>
             </div>
-            <button className="text-white bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md w-22 mt-1 lg:p-2" type="submit">Save Address</button>
+            <button className="text-white bg-orange-600 cursor-pointer transition-all hover:bg-orange-500 outline-none focus:outline-orange-600 border-0 rounded-md w-22 mt-1 p-2 lg:p-3" type="submit">Save Address</button>
         </form>
     </div>
   )
