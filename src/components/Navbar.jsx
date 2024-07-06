@@ -193,7 +193,7 @@ const Navbar = ({handleSubmitLogin}) => {
               <div className={getTotalCartAmount() === 0 ? "" : "absolute w-4 h-4 bg-red-500 rounded-lg -top-1 -right-2"}></div>
             </div>
             <div className="z-100" onClick={handleClick} >
-              <Hamburger rounded distance="sm" size={30} duration={.9} toggled={isOpen} toggle={setOpen}/>
+              <Hamburger color="#ff6347" rounded distance="sm" size={30} duration={.9} toggled={isOpen} toggle={setOpen}/>
             </div>
           </div>
           <div className={!isOpen ? 'animate-[slideLeft_1000ms] duration-75 top-0 border-solid rounded-r-xl border-2 text-black fixed z-50 px-4 h-screen backdrop-blur-md bg-white/30 w-56 right-[100%] flex justify-center items-center' : 'animate-[slideRight_1000ms] duration-75 top-0 border-solid rounded-r-xl border-2 text-black fixed z-50 px-4 h-screen backdrop-blur-md bg-white/30 w-56 left-0 flex justify-center items-center'}>
