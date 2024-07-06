@@ -3,7 +3,7 @@ import React from 'react'
 const Reviews = () => {
   return (
     <div>
-        <div className='testi-bg-image h-full mb-10 mt-2 lg:mx-12  rounded-xl'>
+        <div className='testi-bg-image mx-2 h-full lg:h-screen mb-10 mt-2 lg:mx-12 rounded-xl'>
             <div className="container my-14 mx-auto pt-10 pb-4 md:px-6">
                 <section className="mb-32 text-center">
                     <h2 className="mb-12 text-3xl font-bold">Hear it from our loyal customers</h2>

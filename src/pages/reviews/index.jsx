@@ -4,7 +4,7 @@ import Reviews from '../../components/Reviews'
 const Reviews = () => {
   return (
     <>
-      <div className='mt-2'>
+      <div className=''>
         <Reviews/>
       </div>
     </>
