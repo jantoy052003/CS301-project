@@ -196,7 +196,7 @@ const Navbar = ({handleSubmitLogin}) => {
               <Hamburger rounded distance="sm" size={30} duration={.9} toggled={isOpen} toggle={setOpen}/>
             </div>
           </div>
-          <div className={!isOpen ? 'animate-[slideLeft_1000ms] duration-75 top-0 border-solid rounded-r-xl border-2 text-black fixed z-50 px-4 h-screen bg-tomato w-72 left-[-100%]' : 'animate-[slideRight_1000ms] duration-75 top-0 border-solid rounded-r-xl border-2 text-black fixed z-50 px-4 h-screen backdrop-blur-md bg-white/30 w-56 left-0 flex justify-center items-center'}>
+          <div className={!isOpen ? 'animate-[slideLeft_1000ms] duration-75 top-0 border-solid rounded-r-xl border-2 text-black fixed z-50 px-4 h-screen backdrop-blur-md bg-white/30 w-56 right-[100%] flex justify-center items-center' : 'animate-[slideRight_1000ms] duration-75 top-0 border-solid rounded-r-xl border-2 text-black fixed z-50 px-4 h-screen backdrop-blur-md bg-white/30 w-56 left-0 flex justify-center items-center'}>
             <ul onClick={handleClick} className="flex flex-col gap-10 items-center">
                 <li><NavLink to="/">Home</NavLink></li>
                 <li><NavLink to="/menu">Menu</NavLink></li>
